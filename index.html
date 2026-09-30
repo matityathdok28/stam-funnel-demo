@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'none'; form-action 'none'; base-uri 'none'">
+<title>דמו אינטראקטיבי — משפך אוטומציה | קורס סופר סת"ם</title>
+<meta name="description" content="הדמיה אינטראקטיבית של משפך האוטומציה: פייסבוק ← ManyChat ← Make ← Google Sheets ← WhatsApp. דמו בלבד, שום הודעה לא נשלחת באמת.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%2313233f' stroke='%23c9a44c' stroke-width='4'/%3E%3Ctext x='32' y='43' font-size='32' text-anchor='middle' fill='%23e8d39a' font-family='serif'%3E%D7%A1%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="top-row">
+    <div class="demo-badge" id="demoBanner">⚠️ דמו — שום הודעה לא נשלחת באמת</div>
+    <button type="button" class="reset" id="resetBtn">↺ התחל מחדש</button>
+  </div>
+  <h1>משפך אוטומציה — <span>קורס סופר סת"ם</span></h1>
+  <p class="sub">הדמיה חיה של כל המערכת: מתגובה על פוסט בפייסבוק, דרך הבוט במסנג'ר, ועד רצף הודעות בוואטסאפ. כל ה"שרתים" מדומים בתוך הדף — אין חיבור לשום מערכת אמיתית.</p>
+  <ol class="guide" id="guide">
+    <li data-step="1" class="active"><b>1</b><span>הגיבו לפוסט</span></li>
+    <li data-step="2"><b>2</b><span>ענו לבוט</span></li>
+    <li data-step="3"><b>3</b><span>צפו בוואטסאפ ודלגו ימים</span></li>
+  </ol>
+  <div class="chain" id="chain" aria-label="המערכות המחוברות">
+    <b data-sys="fb">פייסבוק</b><i>←</i><b data-sys="mc">ManyChat</b><i>←</i><b data-sys="make">Make.com</b><i>←</i><b data-sys="gs">Google Sheets</b><i>←</i><b data-sys="alert">התראה לצוות</b><i>←</i><b data-sys="wa">WhatsApp</b>
+  </div>
+</header>
+
+<nav class="tabs" id="tabs" aria-label="חלונות הדמו">
+  <div class="tabrow">
+  <button type="button" data-tab="fb" class="on"><span class="ti">📘</span>פייסבוק<i class="dot"></i></button>
+  <button type="button" data-tab="ms"><span class="ti">💬</span>מסנג'ר<i class="dot"></i></button>
+  <button type="button" data-tab="wa"><span class="ti">🟢</span>וואטסאפ<i class="dot"></i></button>
+  <button type="button" data-tab="sheet"><span class="ti">📊</span>גיליון<i class="dot"></i></button>
+  <button type="button" data-tab="log"><span class="ti">⚙️</span>לוג API<i class="dot"></i></button>
+  </div>
+  <div class="tabs-demo">⚠️ דמו — שום הודעה לא נשלחת באמת</div>
+</nav>
+
+<main class="board" id="board">
+
+  <!-- ============ 1. FACEBOOK ============ -->
+  <section class="panel on" data-panel="fb" id="p-fb">
+    <div class="panel-head"><span class="num">1</span><div><h2>הפוסט בפייסבוק</h2><p>נקודת הכניסה: כל מי שמגיב במילה <span class="kw">סילבוס</span> מפעיל את הבוט.</p></div></div>
+    <div class="namebox">
+      <label for="nameInput">איך קוראים לכם? <small>(במציאות השם מגיע מפרופיל הפייסבוק)</small></label>
+      <input id="nameInput" type="text" value="יוסף" maxlength="18" autocomplete="off" enterkeyhint="done">
+    </div>
+    <div class="fb-card">
+      <div class="fb-h">
+        <div class="av page-av">ס</div>
+        <div><div class="n">קורס סופר סת"ם</div><div class="m">ממומן · 🌐</div></div>
+        <div class="dots">···</div>
+      </div>
+      <div class="fb-txt">✍️ חלמתם פעם לכתוב סת"ם בעצמכם?
+אפשר ללמוד את מלאכת הקודש של כתיבת סת"ם אונליין, מהבית ובקצב שלכם, בליווי אישי של הרב אליעזר אדם.
+מהאות הראשונה ועד מזוזה כשרה: שיעורים מוקלטים, משוב אישי על כל כתיבה, והדרכה בהלכות הסופר.
+
+🎁 7 ימי ניסיון חינם
+👇 הגיבו "סילבוס" ונשלח לכם את כל הפרטים</div>
+      <div class="fb-img">
+        <div class="quill">🪶</div>
+        <div class="k1">כתיבת סת"ם</div>
+        <div class="k2">לומדים אונליין · בליווי הרב אליעזר אדם</div>
+        <div class="k3">7 ימי ניסיון חינם</div>
+      </div>
+      <div class="fb-stats">
+        <span class="rx"><i style="background:#1877f2;margin:0">👍</i><i style="background:#f33e58">❤️</i>&nbsp;128</span>
+        <span id="fbCount">46 תגובות · 12 שיתופים</span>
+      </div>
+      <div class="fb-acts"><div>👍 לייק</div><div>💬 תגובה</div><div>↪ שיתוף</div></div>
+      <div class="fb-cm" id="fbComments">
+        <div class="more">הצגת תגובות קודמות</div>
+      </div>
+      <form class="fb-compose" id="commentForm" autocomplete="off">
+        <div class="av u-av me-av" id="meAv">י</div>
+        <input id="commentInput" type="text" placeholder="כתבו תגובה…" maxlength="80" enterkeyhint="send" aria-label="כתבו תגובה">
+        <button type="submit" id="commentSend" aria-label="שליחת תגובה">➤</button>
+      </form>
+    </div>
+    <button type="button" class="cta nudge" id="btnSyllabus">💬 הגב "סילבוס"</button>
+    <div class="hint" id="fbHint" hidden></div>
+    <button type="button" class="goto" data-goto="ms" id="gotoMs" hidden>המשך לשיחה במסנג'ר ←</button>
+  </section>
+
+  <!-- ============ 2. MESSENGER ============ -->
+  <section class="panel" data-panel="ms" id="p-ms">
+    <div class="panel-head"><span class="num">2</span><div><h2>הבוט במסנג'ר <small>(ManyChat)</small></h2><p>הבוט שואל שפה ומוטיבציה, מקבל מספר וואטסאפ ומבקש אישור מפורש.</p></div></div>
+    <div class="phone">
+      <div class="screen">
+        <div class="status"><span class="clk">10:31</span><span class="sig">●●● ▮</span></div>
+        <div class="ms-head"><span class="back">›</span><div class="av page-av">ס</div><div><div class="n">קורס סופר סת"ם</div><div class="s">בדרך כלל עונה תוך דקות</div></div><div class="icons"><span>✆</span><span>ⓘ</span></div></div>
+        <div class="ms-body chat" id="msBody">
+          <div class="empty" id="msEmpty"><div class="big">💤</div>השיחה תיפתח אוטומטית<br>אחרי התגובה על הפוסט (שלב 1)</div>
+        </div>
+        <form class="ms-input" id="msForm" autocomplete="off">
+          <input id="msText" type="text" inputmode="tel" placeholder="Aa" disabled aria-label="הודעה לבוט" maxlength="30" enterkeyhint="send">
+          <button type="submit" id="msSend" disabled aria-label="שליחה">➤</button>
+        </form>
+      </div>
+    </div>
+    <button type="button" class="goto" data-goto="wa" id="gotoWa" hidden>המשך לוואטסאפ ←</button>
+  </section>
+
+  <!-- ============ 3. WHATSAPP ============ -->
+  <section class="panel" data-panel="wa" id="p-wa">
+    <div class="panel-head"><span class="num">3</span><div><h2>רצף ההודעות בוואטסאפ</h2><p>4 הודעות לאורך 6 ימים. כל כפתור שהלקוח לוחץ משנה את הרצף ואת הגיליון.</p></div></div>
+    <div class="clockbar">
+      <div class="clock"><span class="ic">🕒</span><span>שעון הדמו:</span> <b id="clock">יום 0</b></div>
+      <button type="button" class="skip" id="btnSkip" disabled>⏩ דלג ליום הבא</button>
+    </div>
+    <div class="skipnote" id="skipNote" hidden></div>
+    <div class="phone wa">
+      <div class="screen">
+        <div class="status wa-status"><span class="clk">10:33</span><span class="sig">●●● ▮</span></div>
+        <div class="wa-head"><span class="back">›</span><div class="av page-av">ס</div><div><div class="n">קורס סופר סת"ם <span class="vbadge">✓</span></div><div class="s">חשבון עסקי</div></div><div class="icons"><span>✆</span><span>⋮</span></div></div>
+        <div class="wa-body chat" id="waBody">
+          <div class="enc">🔒 ההודעות והשיחות מוצפנות מקצה לקצה. זהו חשבון עסקי.</div>
+          <div class="empty" id="waEmpty"><div class="big">📭</div>ההודעה הראשונה תגיע לכאן<br>מיד אחרי האישור בבוט (שלב 2)</div>
+        </div>
+        <form class="wa-input" id="waForm" autocomplete="off">
+          <input id="waText" type="text" placeholder="הודעה" disabled aria-label="הודעה בוואטסאפ" maxlength="120" enterkeyhint="send">
+          <button type="submit" id="waSend" class="mic" disabled aria-label="שליחה">➤</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4. SHEET ============ -->
+  <section class="panel wide" data-panel="sheet" id="p-sheet">
+    <div class="panel-head"><span class="num">4</span><div><h2>גיליון הלידים <small>(Google Sheets)</small></h2><p>כל ליד מקבל שורה. העמודות "שלב ברצף" ו"סטטוס" מתעדכנות לבד לאורך הדרך.</p></div></div>
+    <div class="lead-strip" id="leadStrip">עדיין אין ליד חדש. השורה שלכם תופיע כאן ברגע שתאשרו בבוט.</div>
+    <div class="gs">
+      <div class="gs-top">
+        <div class="gs-ic"></div>
+        <div><div class="gs-title">לידים — קורס סת"ם <span class="star">☆</span></div>
+        <div class="gs-menu"><span>קובץ</span><span>עריכה</span><span>תצוגה</span><span>הוספה</span><span>פורמט</span><span>נתונים</span></div></div>
+        <div class="gs-share">🔒 שיתוף</div>
+      </div>
+      <div class="gs-fx"><span class="ref" id="fxRef">A1</span><span class="fx">fx</span><span id="fxVal">תאריך</span></div>
+      <div class="swipe-hint">↔ גללו את הטבלה הצידה כדי לראות את כל העמודות</div>
+      <div class="gs-scroll">
+        <table class="grid" id="sheet">
+          <colgroup><col style="width:34px"><col style="width:92px"><col style="width:70px"><col style="width:122px"><col style="width:62px"><col style="width:100px"><col style="width:72px"><col style="width:150px"><col style="width:104px"><col style="width:86px"><col style="width:190px"></colgroup>
+          <thead><tr><th class="rn"></th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th><th>I</th><th>J</th></tr></thead>
+          <tbody id="sheetBody">
+            <tr class="hdr"><td class="rn">1</td><td>תאריך</td><td>שם</td><td>טלפון</td><td>שפה</td><td>מוטיבציה</td><td>פוסט מקור</td><td>שלב ברצף</td><td>סטטוס</td><td>קוד הפניה</td><td>הערות</td></tr>
+            <tr><td class="rn">2</td><td><span class="mono">24/09/2026</span></td><td>Aharon</td><td><span class="mono">+447700900004</span></td><td>English</td><td>חיבור רוחני</td><td><span class="mono">#1234</span></td><td>נעצר (יום 4)</td><td><span class="st won">נרשם ✅</span></td><td><span class="mono">DEMO-001</span></td><td>נרשם דרך קישור ההפניה</td></tr>
+            <tr><td class="rn">3</td><td><span class="mono">25/09/2026</span></td><td>שמואל</td><td><span class="mono">+972530000005</span></td><td>עברית</td><td>הכל ביחד</td><td><span class="mono">#1187</span></td><td>נעצר (יום 2)</td><td><span class="st rem">הוסר</span></td><td><span class="mono">DEMO-002</span></td><td>לחץ "הסר" — לא לפנות</td></tr>
+            <tr><td class="rn">4</td><td><span class="mono">26/09/2026</span></td><td>משה</td><td><span class="mono">+972520000003</span></td><td>עברית</td><td>פרנסה יציבה</td><td><span class="mono">#1187</span></td><td>נעצר (יום 6)</td><td><span class="st call">שיחה נקבעה</span></td><td><span class="mono">DEMO-003</span></td><td>שיחה עם הרב — דוגמה</td></tr>
+            <tr><td class="rn">5</td><td><span class="mono">28/09/2026</span></td><td>David</td><td><span class="mono">+15550100001</span></td><td>English</td><td>גמישות בזמנים</td><td><span class="mono">#1234</span></td><td>הודעה 2 (יום 2)</td><td><span class="st trial">ניסיון</span></td><td><span class="mono">DEMO-004</span></td><td>לחץ "התחלתי את הניסיון"</td></tr>
+            <tr class="empty-row" id="newRowSlot"><td class="rn">6</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr class="empty-row"><td class="rn">7</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="gs-tabs"><span>＋</span><span>☰</span><span class="on">לידים</span><span>סיכום</span></div>
+    </div>
+    <p class="disc">⚠️ השורות 2–5 הן נתוני דוגמה פיקטיביים. מספרי הטלפון בדמו אינם מספרים אמיתיים.</p>
+  </section>
+
+  <!-- ============ 5. API LOG ============ -->
+  <section class="panel wide" data-panel="log" id="p-log">
+    <div class="panel-head"><span class="num">5</span><div><h2>לוג API <small>(מה קורה "מאחורי הקלעים")</small></h2><p>כל שורה היא הודעה שמערכת אחת שולחת לאחרת. הכול מדומה — אין שום תקשורת אמיתית.</p></div></div>
+    <div class="log-tools">
+      <button type="button" id="logToggle">הצג את כל פרטי ה-JSON</button>
+      <span class="legend"><span class="sys fb">Facebook</span><span class="sys mc">ManyChat</span><span class="sys make">Make</span><span class="sys gs">Sheets</span><span class="sys mail">Email</span><span class="sys tg">Telegram</span><span class="sys wa">WhatsApp</span></span>
+    </div>
+    <div class="log" id="log">
+      <div class="log-empty" id="logEmpty">הלוג ריק. כל "קריאת API" מדומה תופיע כאן ברגע שהיא קורית, עם שעה, כתובת, הנתונים שנשלחו והתשובה.</div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot"><b>דמו בלבד</b> · שום הודעה לא נשלחת, שום מידע לא נאסף או נשמר · כל השמות, המספרים והקישורים הם נתוני דוגמה · קורס סופר סת"ם</footer>
+
+<button type="button" class="ticker" id="ticker" hidden></button>
+<div class="tip" id="tip" role="status" hidden>🔗 קישור דמו — בגרסה האמיתית ייפתח הדף באתר</div>
+
+<script src="app.js"></script>
+</body>
+</html>
