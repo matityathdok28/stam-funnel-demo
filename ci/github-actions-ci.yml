@@ -1,0 +1,30 @@
+# MOVE THIS FILE TO .github/workflows/ci.yml to activate it.
+# (It was committed here because the automation token lacks the `workflow` scope.)
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: JS syntax check
+        run: |
+          node --check app.js
+          node --check texts.js
+      - name: Local assets referenced by index.html exist
+        run: |
+          missing=0
+          for f in $(grep -oE '(src|href)="[^"#:]+"' index.html | sed -E 's/^(src|href)="//; s/"$//' | sort -u); do
+            if [ ! -e "$f" ]; then echo "Missing: $f"; missing=1; fi
+          done
+          exit $missing
