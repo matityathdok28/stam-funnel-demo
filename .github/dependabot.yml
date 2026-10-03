@@ -1,0 +1,8 @@
+version: 2
+updates:
+  # No npm dependencies (plain HTML/JS). Keeps GitHub Actions versions current
+  # once ci/github-actions-ci.yml is moved to .github/workflows/ci.yml.
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
